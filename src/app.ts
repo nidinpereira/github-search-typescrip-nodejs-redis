@@ -1,6 +1,7 @@
 import express, {Express} from "express";
 import compression from "compression";  // compresses requests
-import lusca from "lusca";
+import cors from "cors";
+import helmet from "helmet";
 
 // route handler
 import setRoutes from "./app.router";
@@ -16,8 +17,16 @@ app.set("serverIp", SERVER_IP || "127.0.0.1");
 
 app.use(bodyParser.json());
 app.use(compression());
-app.use(lusca.xframe("SAMEORIGIN"));
-app.use(lusca.xssProtection(true));
+
+app.disable("x-powered-by");
+
+// CORS
+app.use(cors());
+
+app.disable("etag");
+// Compression
+app.use(compression());
+app.use(helmet());
 
 /**
  * load API routes dynamically.
