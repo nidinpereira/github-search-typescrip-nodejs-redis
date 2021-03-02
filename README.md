@@ -2,12 +2,9 @@
 
 The main purpose of this repository is to show a working Node.js API Server with super fast caching from Redis in TypeScript.
 
+**Live Demo**: [https://github-search-api.nidinpereira.com/](https://github-search-api.nidinpereira.com/)
 
-[![Dependency Status](https://david-dm.org/Microsoft/TypeScript-Node-Starter.svg)](https://david-dm.org/Microsoft/TypeScript-Node-Starter) [![Build Status](https://travis-ci.org/Microsoft/TypeScript-Node-Starter.svg?branch=master)](https://travis-ci.org/Microsoft/TypeScript-Node-Starter)
-
-**Live Demo**: [https://github-search-api.nidinpereira.com/](https://typescript-node-starter.azurewebsites.net/)
-
-**Api Docs**: [https://github-search-api.nidinpereira.com/](https://typescript-node-starter.azurewebsites.net/)
+**Api Docs**: [https://app.swaggerhub.com/apis/npereira-jc/github-search](https://app.swaggerhub.com/apis/npereira-jc/github-search)
 
 
 # Table of contents:
@@ -15,20 +12,12 @@ The main purpose of this repository is to show a working Node.js API Server with
 - [Pre-reqs](#pre-reqs)
 - [Getting started](#getting-started)
 - [Deploying the app](#deploying-the-app)
-	- [Pre-reqs](#Prerequisites)
-	- [Deploying to Azure App Service](#deploying-to-azure-app-service)
-- [TypeScript + Node](#typescript--node)
-	- [Getting TypeScript](#getting-typescript)
-	- [Project Structure](#project-structure)
-	- [Building the project](#building-the-project)
-	- [Type Definition (`.d.ts`) Files](#type-definition-dts-files)
-	- [Debugging](#debugging)
-	- [Testing](#testing)
-	- [ESLint](#eslint)
+- [Project Structure](#project-structure)
+- [Testing](#testing)
+- [ESLint](#eslint)
 - [Dependencies](#dependencies)
 	- [`dependencies`](#dependencies)
 	- [`devDependencies`](#devdependencies)
-- [Hackathon Starter Project](#hackathon-starter-project)
 
 # Pre-reqs
 To build and run this app locally you will need a few things:
@@ -133,7 +122,7 @@ The full folder structure of this app is explained below:
 | .travis.yml              | Used to configure Travis CI build                                                             |
 | Docker                   | Used for containerization of the build                                                             |
 | jest.config.js           | Used to configure Jest running tests written in TypeScript                                    |
-| package.json             | File that contains npm dependencies as well as [build scripts](#what-if-a-library-isnt-on-definitelytyped)                          |
+| package.json             | File that contains npm dependencies as well as [build scripts]                       |
 | tsconfig.json            | Config settings for compiling server code written in TypeScript                               |
 | tsconfig.tests.json      | Config settings for compiling tests written in TypeScript                                     |
 | .eslintrc                | Config settings for ESLint code style checking                                                |
@@ -168,10 +157,10 @@ Let's dissect this project's `tsconfig.json`, starting with the `compilerOptions
 | `"target": "es6"`                  | The output language level. Node supports ES6, so we can target that here                               |
 | `"noImplicitAny": true`            | Enables a stricter setting which throws errors when something has a default `any` value                |
 | `"moduleResolution": "node"`       | TypeScript attempts to mimic Node's module resolution strategy. Read more [here](https://www.typescriptlang.org/docs/handbook/module-resolution.html#node)                                                                    |
-| `"sourceMap": true`                | We want source maps to be output along side our JavaScript. See the [debugging](#debugging) section    |
+| `"sourceMap": true`                | We want source maps to be output along side our JavaScript.     |
 | `"outDir": "dist"`                 | Location to output `.js` files after compilation                                                        |
-| `"baseUrl": "."`                   | Part of configuring module resolution. See [path mapping section](#installing-dts-files-from-definitelytyped) |
-| `paths: {...}`                     | Part of configuring module resolution. See [path mapping section](#installing-dts-files-from-definitelytyped) |
+| `"baseUrl": "."`                   | Part of configuring module resolution.  |
+| `paths: {...}`                     | Part of configuring module resolution. |
 
 The rest of the file define the TypeScript project context.
 The project context is basically a set of options that determine which files are compiled when the compiler is invoked with a specific `tsconfig.json`.
